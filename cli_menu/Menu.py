@@ -15,11 +15,11 @@ class MenuItem():
 
 
 class Menu():
-    def __init__(self, manu_name="Menu", width=40, length=10):
+    def __init__(self, menu_name="Menu", width=40, length=10):
         self._options = {}
         self._width = width
         self._length = length
-        self._manu_name = manu_name
+        self._menu_name = menu_name
 
         self._options["q"] = MenuItem("Quit", "q", exit)
 
@@ -33,7 +33,7 @@ class Menu():
         self._options[index] = MenuItem(option_name, order if order is not None else len(self._options), function)
 
     def display_menu(self):
-        out = f"{self._manu_name:^{self._width}}\n"
+        out = f"{self._menu_name:^{self._width}}\n"
         tmp = "Choose one of the options below"
         out += f"{tmp:^{self._width}}\n\n"
         for option in self._options:
